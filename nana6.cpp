@@ -7,6 +7,7 @@ int pilihan,penumpang,harga,total;
 string tujuan;
 void tiket()
 {
+    do{
     cout<<"---HARGA TIKET TUJUAN---"<<endl;
     cout<<"1. Malang-Surabaya: Rp35000"<<endl;
     cout<<"2. Malang-Pasuruan: Rp20000"<<endl;
@@ -62,17 +63,15 @@ void to ()
     cout<<penumpang<<endl;
     cout<<"Total Harga: ";
     cout<<total<<endl;
-    system("pause");
-    
-    
-        
+    cout<<"apakah anda mau mengulang, tekan y atau Y "<<endl;
+    cin>>ulang;
+    }
+      while (ulang=="y"||ulang=="Y");  
 }
 int main() {
-    tiket();
     to();
-        
-    
 
-    
+    system("pause");
+                
     return 0;
 }
