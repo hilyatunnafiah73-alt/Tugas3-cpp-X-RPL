@@ -1,77 +1,82 @@
-// Online C++ compiler (editor)
-// Write and run C++ online using this editor.
 
 #include <iostream>
+#include <string>
 using namespace std;
-int pilihan,penumpang,harga,total;
+
+int pilihan, penumpang, harga, total;
 string tujuan;
+char ulang;
+
 void tiket()
 {
-    do{
-    cout<<"---HARGA TIKET TUJUAN---"<<endl;
-    cout<<"1. Malang-Surabaya: Rp35000"<<endl;
-    cout<<"2. Malang-Pasuruan: Rp20000"<<endl;
-    cout<<"3. Malang-Jombang: Rp25000"<<endl;
+    cout << "---HARGA TIKET TUJUAN---" << endl;
+    cout << "1. Malang-Surabaya: Rp35000" << endl;
+    cout << "2. Malang-Pasuruan: Rp20000" << endl;
+    cout << "3. Malang-Jombang: Rp25000" << endl;
 }
-void to ()
+
+void to()
 {
-    cout<<"Pilih tiket tujuan anda: ";
-    cin>>pilihan;
+    do {
+        harga = 0;
+        tujuan = "";
 
-    if (pilihan==1)
-    {
-        tujuan="malang-surabaya";
-        harga=35000;
-        cout<<"_______________________"<<endl;
-        cout<<"Tujuan= Malang-Surabaya"<<endl;
-        cout<<"Harga= Rp35000"<<endl;
-        cout<<"_______________________"<<endl;
-    }
-    else if (pilihan==2)
-    {
-        tujuan="Malang-Pasuruan";
-        harga=20000;
-        cout<<"_______________________"<<endl;
-        cout<<"Tujuan= Malang-Pasuruan"<<endl;
-        cout<<"Harga= Rp20000"<<endl;
-        cout<<"_______________________"<<endl;
-    }
-    else if (pilihan==3)
-    {
-        tujuan="Malang-Jombang";
-        harga=25000;
-        cout<<"_______________________"<<endl;
-        cout<<"Tujuan= Malang-Jombang"<<endl;
-        cout<<"Harga= Rp25000"<<endl;
-        cout<<"_______________________"<<endl;
-    }
-    else 
-    {
-        cout<<"_______________________"<<endl;
-        cout<<"Pilihan tidak tersedia."<<endl;
-        cout<<"_______________________"<<endl;
-    }
+        tiket();
 
-    cout<<"Masukkan Jumlah Penumpang: ";
-    cin>>penumpang;
-    total=harga*penumpang;
-    cout<<"___________________________"<<endl;
-    cout<<"---DETAIL TIKET---"<<endl;
-    cout<<"Tujuan: ";
-    cout<<tujuan<<endl;
-    cout<<"Jumlah Penumpang: ";
-    cout<<penumpang<<endl;
-    cout<<"Total Harga: ";
-    cout<<total<<endl;
-    cout<<"apakah anda mau mengulang, tekan y atau Y "<<endl;
-    cin>>ulang;
-    }
-      while (ulang=="y"||ulang=="Y");  
+        cout << "Pilih tiket tujuan anda: ";
+        cin >> pilihan;
+
+        if (pilihan == 1)
+        {
+            tujuan = "Malang-Surabaya";
+            harga = 35000;
+        }
+        else if (pilihan == 2)
+        {
+            tujuan = "Malang-Pasuruan";
+            harga = 20000;
+        }
+        else if (pilihan == 3)
+        {
+            tujuan = "Malang-Jombang";
+            harga = 25000;
+        }
+        else
+        {
+            cout << "_______________________" << endl;
+            cout << "Pilihan tidak tersedia." << endl;
+            cout << "_______________________" << endl;
+            continue;
+        }
+
+        cout << "_______________________" << endl;
+        cout << "Tujuan = " << tujuan << endl;
+        cout << "Harga = Rp" << harga << endl;
+        cout << "_______________________" << endl;
+
+        cout << "Masukkan Jumlah Penumpang: ";
+        cin >> penumpang;
+
+        total = harga * penumpang;
+
+        cout << "___________________________" << endl;
+        cout << "---DETAIL TIKET---" << endl;
+        cout << "Tujuan: " << tujuan << endl;
+        cout << "Jumlah Penumpang: " << penumpang << endl;
+        cout << "Total Harga: Rp" << total << endl;
+        cout << "___________________________" << endl;
+
+        cout << "Apakah anda mau mengulang? Tekan y atau Y: ";
+        cin >> ulang;
+
+    } while (ulang == 'y' || ulang == 'Y');
 }
-int main() {
+
+int main()
+{
     to();
 
-    system("pause");
-                
+    cout << "Terima kasih telah menggunakan layanan tiket." << endl;
+
     return 0;
 }
